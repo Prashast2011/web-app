@@ -4,7 +4,7 @@ app = FastAPI()
 
 
 @app.get("/")
-async def poetry():
+async def root():
     return {"message": "Hello world"}
 
 
