@@ -4,9 +4,20 @@ from fastapi.responses import HTMLResponse
 app = FastAPI()
 
 
-@app.get("/")
+@app.get("/",response_class=HTMLResponse)
+
 async def root():
-    return {"message": "this is python"}
+    return """
+        <html>
+            <head>
+                <title>Some HTML in here</title>
+            <head>
+            <body>
+                <h1>Look ma HTML</h1>
+            </body>
+        <html>
+        """
+
     
 
 
