@@ -10,7 +10,7 @@ async def root():
     return """
         <html>
             <head>
-                <title>Some HTML in here</title>
+                <title>hello</title>
             <head>
             <body>
                 <h1>hello</h1>
