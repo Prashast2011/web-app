@@ -18,6 +18,13 @@ async def root():
         <html>
         """
 
+
+@app.get("/chat/room",response_class=HTMLResponse)
+async def chatroom():
+    return open("chatlog.txt").read()
+
+
+
     
 
 
