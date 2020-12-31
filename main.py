@@ -1,11 +1,19 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
+from pydantic import Basemodel
+
+
+class msg(Basemodel):
+    user:str
+    message:str
+
+
+
 
 app = FastAPI()
 
 
-@app.get("/",response_class=HTMLResponse)
-
+@app.get("/", response_class=HTMLResponse)
 async def root():
     return """
         <html>
@@ -19,13 +27,6 @@ async def root():
         """
 
 
-@app.get("/chat/room",response_class=HTMLResponse)
+@app.get("/chat/room", response_class=HTMLResponse)
 async def chatroom():
     return open("chatlog.txt").read()
-
-
-
-    
-
-
-
