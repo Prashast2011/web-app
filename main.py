@@ -4,13 +4,14 @@ from pydantic import Basemodel
 
 
 class msg(Basemodel):
-    user:str
-    message:str
-
-
+    user: str
+    message: str
 
 
 app = FastAPI()
+
+
+#makes "app" = "FastAPI"
 
 
 @app.get("/", response_class=HTMLResponse)
@@ -27,6 +28,12 @@ async def root():
         """
 
 
+#changes the page language to html
+
+
 @app.get("/chat/room", response_class=HTMLResponse)
 async def chatroom():
     return open("chatlog.txt").read()
+
+
+#creates webpage in site
